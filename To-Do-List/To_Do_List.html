@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do list</title>
+        <link rel="stylesheet" href="To_Do_list.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2 id="list-title">لیست وظایف</h2>
+            <div>
+                <input type="submit" id="input-task" value="یادداشت خود را قرار دهید ...">
+            </div>
+            <div id="hide">
+                <input type="text" id="title" placeholder="عنوان تسک">
+                <br>
+                <input type="text" id="assign" placeholder="نام مسئول تسک را وارد کنید ...">
+                <br>
+                <button id="create">ایجاد</button>
+                <button id="cancel">انصراف</button>
+            </div>
+            <div id="Error">لطفا عنوان تسک را به صورت صحیح وارد کنید ...</div>
+        </div>
+        <div>
+            <ul id="show-task">
+                
+            </ul>
+        </div>
+    </body>
+    <script src="To_Do_List.js"></script>
+</html>

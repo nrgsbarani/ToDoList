@@ -1,0 +1,193 @@
+/*add new custom font called vazir*/
+@font-face {
+    font-family: vazir;
+    src: url(../fonts/Vazir.woff2) format('woff2'),
+         url(../fonts/Vazir.woff) format('woff'),
+         url(../fonts/Vazir.ttf) format('truetype');
+}
+/*add new custom font called vazir-bold*/
+@font-face {
+    font-family: vazir-bold;
+    src: url(../fonts/Vazir-Bold.woff2) format('woff2'),
+         url(../fonts/Vazir-Bold.woff) format('woff'),
+         url(../fonts/Vazir-Bold.ttf) format('truetype');
+}
+
+html {
+    direction: rtl;
+    font-family: vazir;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*define variable for CSS style*/
+:root {
+    --primary-color: #8e2de2;
+    --secondary-color: #4a00e0;
+    --highlight-color: #6c5ce7;
+    --text-color: #ffffff;
+    --border-color: rgba(53, 162, 159, .4);
+    --hover-color: #4C1F7A;
+    --background-hover: #ddd;
+    --outline-color:#07191a;
+}
+
+/*First div inclue input, button, circle and message*/
+.container {
+    display: flex;               /*Moves the element up*/
+    justify-content: center;     /*Moves the element center*/
+    align-items: center;         /*Moves the element center in Vertical axis*/
+    flex-direction: column;      /*Elements are placed in columns*/
+    background: linear-gradient(to right, var(--primary-color) , var(--secondary-color));
+    text-align: center;
+}
+
+.container h2 {
+    color: var(--text-color);
+    text-shadow: 2px 2px black;
+}
+
+#input-task , #title , #assign{ 
+    padding: 7px;                /*7px for up,down,right and left*/
+    width: 500px;                /*Horizontal length for input box*/
+    outline-color: var(--outline-color);    /*outline color for input box*/
+    /*define a border for input box*/
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: vazir;
+}
+
+#input-task {
+    display: block;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+#input-task:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+#title , #assign {
+    margin-bottom: 10px;
+}
+
+#hide { 
+    display: none;
+}
+
+#Error {
+    color: var(--text-color);
+    text-shadow: 2px 2px black;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#create, #cancel {
+    font-family: vazir;
+    width: 100px;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#create {
+    background: var(--highlight-color);      /*background color of start button*/
+    color: var(--text-color);             /*text color of start button*/
+}
+
+#create:hover {
+    background-color: #5e4db5;
+    transition: 0.3s;
+}
+
+#cancel { 
+    background: #e2e2e2;      /*background color of start button*/
+    color: black;             /*text color of start button*/
+}
+
+#cancel:hover {
+    background-color: #b0b0b0;
+    transition: 0.3s;
+}
+
+#show-task { 
+    margin: 0;
+    padding: 0;
+}
+
+#show-task li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 40px 12px 8px;
+    background-color: #8b5dff5d;
+    font-family: vazir;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    user-select: none;
+}
+
+#show-task li:nth-child(odd) {
+    background: #FFF7D1;
+}
+
+#show-task li:hover {
+    background: var(--background-hover);
+    transform: scale(1.01);
+    font-family: vazir-bold;
+    color: var(--hover-color);
+}
+
+/*Add new class checked to li tag when click on task*/
+#show-task li.checked {
+    background: #239d36b7;
+    color: var(--text-color);
+    font-family: vazir;
+    text-decoration: line-through;
+    transform: scale(0.95);
+}
+
+/* Add a "checked" mark when clicked on */
+#show-task li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: var(--text-color);
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 12px;
+    right: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 16px;
+}
+
+.close:hover {
+    background-color: #f701018f;
+    color: var(--text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.assign-tab {
+    position: absolute;
+    left: 120px;
+    top: 0;
+    padding: 12px 8px 12px 40px;
+}
+
